@@ -11,7 +11,9 @@ Route::middleware('auth:sanctum')->prefix('v1')->group(function(){
 
     Route::apiResource('/tasks', TaskController::class);
     Route::patch('/tasks/{task}/complete', CompleteTaskController::class);
-    
+    // Nhớ thêm vào header trong postman để tránh lỗi: Unauthenticated
+    // Accept : application/json
+    // Referer : localhost
 });
 
 
