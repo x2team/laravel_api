@@ -11,14 +11,19 @@ use App\Http\Controllers\Api\Auth\RegisterController;
 
 
 
-Route::middleware('auth:sanctum')->prefix('v1')->group(function(){
+/*Route::middleware('auth:sanctum')->prefix('v1')->group(function(){
 
     Route::apiResource('/tasks', TaskController::class);
     Route::patch('/tasks/{task}/complete', CompleteTaskController::class);
     // Nhớ thêm vào header trong postman để tránh lỗi: Unauthenticated
     // Accept : application/json
     // Referer : localhost
-});
+});*/
+
+
+require __DIR__ . '/api/v1.php';
+require __DIR__ . '/api/v2.php';
+
 
 Route::prefix('auth')->group(function(){
     Route::post('/login', LoginController::class);
